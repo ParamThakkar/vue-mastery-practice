@@ -1,10 +1,22 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <NavBar />
+    <Notification/>
+    <router-view :key="$route.fullPath" />
   </div>
-  <router-view />
 </template>
+
+<script>
+import NavBar from "@/components/NavBar.vue";
+import Notification from "@/components/NotificationContainer.vue";
+
+export default {
+  components: {
+    NavBar,
+    Notification
+  },
+};
+</script>
 
 <style>
 #app {
